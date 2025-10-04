@@ -148,6 +148,29 @@ This is particularly important for:
 
 All interaction with Prolog is displayed transparently, so you can see what the agent is doing under the hood. This transparency helps you understand and verify what's going on at every step.
 
+## The Bigger Picture: A Platform for Analysts
+
+While this demonstration uses manually entered data, imagine the possibilities when this architecture is connected to real data sources and equipped with a comprehensive repertoire of computational models. For **economics, financial, and business analysts**, this could become a truly powerful analytical platform.
+
+Consider the potential:
+
+- **Live Data Integration**: Connect to financial APIs, economic databases, market feeds, and company reporting systems. The agent could pull real-time data and store it as Prolog facts, always queryable and always verifiable.
+
+- **Rich Model Library**: Beyond simple CAGR calculations, imagine having predicates for:
+  - Financial ratios (P/E, debt-to-equity, ROE, etc.)
+  - Risk models (VaR, beta calculations, correlation analysis)
+  - Economic indicators (inflation adjustments, PPP conversions)
+  - Business metrics (customer lifetime value, churn prediction)
+  - Forecasting models (time series analysis, regression)
+
+- **Complex Reasoning**: Prolog excels at rule-based reasoning. An analyst could define complex business rules like "flag any company where debt-to-equity > 2.0 AND interest coverage < 1.5" or "find all markets where our market share is declining while the overall market is growing."
+
+- **Audit Trail**: Every calculation, every data point used, every rule applied—all traceable. Perfect for compliance, peer review, and understanding how conclusions were reached.
+
+- **Collaborative Knowledge Base**: Teams could build shared libraries of predicates and rules, creating institutional knowledge that's both executable and verifiable.
+
+The combination of natural language interaction (via LLM), formal logical reasoning (via Prolog), and verifiable computation creates something unique: an analytical assistant that's both powerful and trustworthy. You can ask questions in plain English, get sophisticated analyses, and verify every step of the reasoning.
+
 ## Try It Yourself
 
 The repo is available at `roehst/pyswip-agent`. It's a simple yet powerful demonstration of how formal logic systems and LLMs can work together, each doing what they do best: Prolog handling verifiable reasoning and calculations, LLMs handling natural language interaction.
