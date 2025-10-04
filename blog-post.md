@@ -72,7 +72,7 @@ Let's see this in action with a macroeconomic analysis scenario. The interaction
 ### Populating Facts
 
 ```
-User: Popule o PIB de cada pais da america latina em bilhoes de dolares em 2020
+User: Populate the GDP of each Latin American country in billions of dollars for 2020
 
 ************ Running Prolog query:  assertz(pib(brasil, 1428)), assertz(pib(argentina, 383)), 
 assertz(pib(chile, 282)), assertz(pib(uruguai, 56)), assertz(pib(paraguai, 40)), 
@@ -86,7 +86,7 @@ The agent stores these as Prolog facts. Now they're in a structured knowledge ba
 ### Creating Rules
 
 ```
-User: Crie uma regra que da o ranking de um pais em PIB
+User: Create a rule that gives the ranking of a country by GDP
 
 ************ Running Prolog query:  assertz((ranking_pib(Pais, R) :- 
     findall(Pib, (pib(_, Pib)), ListPibs), 
@@ -105,13 +105,13 @@ This creates a Prolog rule that:
 Here's where it gets interesting. When asked to calculate per capita income:
 
 ```
-User: Agora com uma consulta calcule a renda per capita do brasil.
+User: Now with a query calculate the per capita income of Brazil.
 
 ************ Running Prolog query:  pib(brasil, Pib), populacao(brasil, Pop)
 ************ Result:  [{'Pib': 1428, 'Pop': 212.6}]
 
-Agent: Para calcular a renda per capita, dividimos o PIB pela população:
-Renda per capita = PIB / população = 1428 / 212.6 = 6.71 (em dólares de 2020, em milhares)
+Agent: To calculate per capita income, we divide GDP by population:
+Per capita income = GDP / population = 1428 / 212.6 = 6.71 (in 2020 dollars, in thousands)
 ```
 
 ### Computing Growth Rates
@@ -119,19 +119,19 @@ Renda per capita = PIB / população = 1428 / 212.6 = 6.71 (em dólares de 2020,
 Even complex financial formulas like CAGR (Compound Annual Growth Rate) become verifiable:
 
 ```
-User: Crie um predicado CAGR que calcula o CAGR de dois valores em dois anos.
+User: Create a CAGR predicate that calculates the CAGR of two values across two years.
 
 ************ Running Prolog query:  assertz((cagr(ValorInicial, ValorFinal, AnoInicial, AnoFinal, CAGR) :- 
     DiferencaAnos is AnoFinal - AnoInicial, 
     CAGR is ((ValorFinal / ValorInicial) ** (1 / DiferencaAnos) - 1) * 100))
 
-User: Agora, compute com essa regra o CAGR do brasil de 2000 a 2020
+User: Now, compute with this rule the CAGR of Brazil from 2000 to 2020
 
 ************ Running Prolog query:  pib_2000(brasil, Pib2000), pib(brasil, Pib2020), 
     cagr(Pib2000, Pib2020, 2000, 2020, CAGR)
 ************ Result:  [{'Pib2000': 644, 'Pib2020': 1428, 'CAGR': 4.061987665473099}]
 
-Agent: O CAGR do PIB do Brasil de 2000 a 2020 foi de aproximadamente 4.06%.
+Agent: The CAGR of Brazil's GDP from 2000 to 2020 was approximately 4.06%.
 ```
 
 ## Why This Matters: Verifiable Logic and Math
