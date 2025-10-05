@@ -9,10 +9,13 @@ Interaction is purely conversational:
 - You can also ask it to add rules, and it will do so. 
 - Finally, you can ask it to query the knowledge base, and it will return the results.
 
-All interaction with Prolog is displayed, so you can see what the agent is doing under the hood, and it will help you
-understand and check what is going on.
+All interaction with Prolog is displayed, so you can see what the agent is doing under the hood, and it will help you understand and check what is going on.
+
+Use it as you would use GPT for business analysis and research, but now with verifiable logic at its core.
 
 The repo is available on `roehst/pyswip-agent`.
+
+Run it with `uv run python main.py`, assuming you have prepared your `.env` file with your OpenAI API key and SWI Prolog is installed.
 
 ## A transcript
 

@@ -58,6 +58,11 @@ def main():
     and other Prolog predicates as needed. The full power of SWIPL is at your disposal.
     
     Your goal is to capture user knowledge in Prolog and reason about it.
+
+    The Prelude code is:
+    ```prolog
+    %% Custom useful prelude of predicates and facts. (...)
+    ```
     """
 
     agent = Agent(
@@ -69,7 +74,10 @@ def main():
 
 Let's see this in action with a macroeconomic analysis scenario. The interaction is purely conversational, but every calculation is verifiable through Prolog.
 
-### Populating Facts
+### Populating Facts with the Web Search Tool
+
+By simply adding the Web Search tool from OpenAI's Agents SDK, the agent can gather data from the web. For example, we can ask it to populate GDP data for Latin American countries:
+
 
 ```
 User: Populate the GDP of each Latin American country in billions of dollars for 2020
@@ -154,7 +162,7 @@ While this demonstration uses manually entered data, imagine the possibilities w
 
 Consider the potential:
 
-- **Live Data Integration**: Connect to financial APIs, economic databases, market feeds, and company reporting systems. The agent could pull real-time data and store it as Prolog facts, always queryable and always verifiable.
+- **Live Data Integration**: Connect to financial APIs beyond OpenAI's Web Search Tool, economic databases, market feeds, and company reporting systems. The agent could pull real-time data and store it as Prolog facts, always queryable and always verifiable.
 
 - **Rich Model Library**: Beyond simple CAGR calculations, imagine having predicates for:
   - Financial ratios (P/E, debt-to-equity, ROE, etc.)
@@ -176,3 +184,5 @@ The combination of natural language interaction (via LLM), formal logical reason
 The repo is available at `roehst/pyswip-agent`. It's a simple yet powerful demonstration of how formal logic systems and LLMs can work together, each doing what they do best: Prolog handling verifiable reasoning and calculations, LLMs handling natural language interaction.
 
 The beauty is in the simplicity: one function tool, one Prolog interpreter, and suddenly you have an AI agent with verifiable logic at its core.
+
+The interface is a simple one made with `rich`, and all user-agent interactions, together with the Prolog queries and results, are logged to a JSON file for easy inspection.
